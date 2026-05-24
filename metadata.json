@@ -1,0 +1,6 @@
+{
+  "name": "TrackWise AI",
+  "description": "A premium modern SaaS expense tracker dashboard powered by client-side intelligence and analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

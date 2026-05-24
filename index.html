@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrackWise AI — Premium Smart Expense Tracker Dashboard</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Link Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="bg-[#0F1117] text-[#F5F7FA] min-h-screen flex flex-col antialiased">
+
+    <!-- Toast Notifications Floating Stack -->
+    <div id="toast-container" class="fixed top-5 right-5 flex flex-col gap-3 pointer-events-none z-[2000]"></div>
+
+    <!-- AUTH / LANDING PAGE OVERLAY (STUNNING COMBINED EXPERIENCE) -->
+    <div id="auth-screen" class="fixed inset-0 bg-[#070913] text-gray-300 z-[1500] overflow-y-auto scroll-smooth flex flex-col">
+      <!-- Ambient background visual design elements -->
+      <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[140px] pointer-events-none"></div>
+      <div class="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <!-- Sticky-style Elegant Navbar -->
+      <header class="w-full border-b border-white/[0.05] bg-[#070913]/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <!-- Left: Brand Logo -->
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary to-accent p-0.5 flex items-center justify-center shadow-lg">
+              <div class="w-full h-full rounded-[10px] bg-[#0E1015] flex items-center justify-center">
+                <svg class="w-4.5 h-4.5 text-accent animate-pulse" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75c0 .414-.168.75-.5.75s-.5-.336-.5-.75.168-.75.5-.75.5.336.5.75zM14.25 9.75c0 .414-.168.75-.5.75s-.5-.336-.5-.75.168-.75.5-.75.5.336.5.75z" />
+                </svg>
+              </div>
+            </div>
+            <span class="text-lg font-bold font-display tracking-tight text-white">TrackWise <span class="text-accent">AI</span></span>
+          </div>
+
+          <!-- Center: Feature Nav Links (Desktop) -->
+          <nav class="hidden md:flex items-center gap-8 text-xs font-medium text-gray-400">
+            <a href="#features" class="hover:text-white transition-colors">Platform Features</a>
+            <a href="#metrics" class="hover:text-white transition-colors">Live Operations</a>
+            <a href="#security" class="hover:text-white transition-colors">Privacy Paradigm</a>
+          </nav>
+
+          <!-- Right: Action CTA button -->
+          <div>
+            <a href="#auth-card-anchor" class="px-4 py-2 text-xs font-bold text-white bg-white/5 hover:bg-white/10 rounded-xl border border-white/10 transition-all">Launch Console</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Landing Page Hero Container -->
+      <main class="flex-1 max-w-7xl w-full mx-auto px-6 py-12 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        <!-- Left: Captivating Copy & Core Pitch -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          <!-- Micro-badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent animate-ping"></span>
+            <span class="text-[10px] uppercase tracking-widest text-[#00E5A8] font-bold">Trackwise Smart Workspace v1.3</span>
+          </div>
+
+          <h1 class="text-4xl md:text-5xl font-extrabold font-display text-white tracking-tight leading-[1.12]">
+            Empor your money with <br/>
+            <span class="bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text">Predictive Visual Analytics</span>
+          </h1>
+
+          <p class="text-sm md:text-base text-gray-400 max-w-xl leading-relaxed">
+            Stop guessing your cash flow trajectory. Gain total oversight of expenditure, forecast future financial thresholds, and consult our native AI Advisor with zero-configuration personal workspaces.
+          </p>
+
+          <!-- Beautiful benefit list -->
+          <ul class="space-y-3 pt-2">
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mt-0.5">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              </span>
+              <div>
+                <strong class="text-white text-xs block font-semibold">Decentralized User Accounts</strong>
+                <span class="text-xs text-gray-400">Perfect linking and encryption. Input data is saved strictly to your personalized profile.</span>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mt-0.5">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              </span>
+              <div>
+                <strong class="text-white text-xs block font-semibold">Intelligent Live Predictions</strong>
+                <span class="text-xs text-gray-400">Instantly projects upcoming balance thresholds with real machine-learning estimations.</span>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mt-0.5">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              </span>
+              <div>
+                <strong class="text-white text-xs block font-semibold">Conversational AI Advisories</strong>
+                <span class="text-xs text-gray-400">Discuss active spend groups or query dynamic optimization tips directly in continuous chat.</span>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Platform high-fidelity counters -->
+          <div class="grid grid-cols-3 gap-4 pt-6 max-w-lg border-t border-white/[0.05]">
+            <div class="p-4 bg-white/[0.02] border border-white/[0.05] rounded-2xl">
+              <div class="text-[10px] text-gray-400 font-medium font-mono uppercase">Predictive Acc</div>
+              <div class="text-xl font-bold text-accent font-display mt-0.5">99.4%</div>
+            </div>
+            <div class="p-4 bg-white/[0.02] border border-white/[0.05] rounded-2xl">
+              <div class="text-[10px] text-gray-400 font-medium font-mono uppercase">User Database</div>
+              <div class="text-xl font-bold text-white font-display mt-0.5">Isolated</div>
+            </div>
+            <div class="p-4 bg-white/[0.02] border border-white/[0.05] rounded-2xl">
+              <div class="text-[10px] text-gray-400 font-medium font-mono uppercase">Render Latency</div>
+              <div class="text-xl font-bold text-[#7C5CFF] font-display mt-0.5">&lt; 40ms</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Elegant Glass Interactive Credentials Box -->
+        <div id="auth-card-anchor" class="lg:col-span-5 flex justify-center lg:justify-end py-4">
+          <div class="glass max-w-sm w-full p-8 rounded-3xl border border-white/10 shadow-3xl text-left relative overflow-hidden animate-fade-in-scale">
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+            <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-accent/10 rounded-full blur-2xl"></div>
+            
+            <!-- Logo inside card -->
+            <div class="flex items-center gap-2 mb-6 justify-center">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-accent p-0.5 flex items-center justify-center shadow-lg">
+                <div class="w-full h-full rounded-[10px] bg-[#0E1015] flex items-center justify-center">
+                  <svg class="w-5 h-5 text-accent animate-pulse" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75c0 .414-.168.75-.5.75s-.5-.336-.5-.75.168-.75.5-.75.5.336.5.75zM14.25 9.75c0 .414-.168.75-.5.75s-.5-.336-.5-.75.168-.75.5-.75.5.336.5.75z" />
+                  </svg>
+                </div>
+              </div>
+              <span class="text-xl font-bold font-display tracking-tight text-white">TrackWise <span class="text-accent">AI</span></span>
+            </div>
+
+            <!-- Tabs: Login vs Register -->
+            <div class="flex bg-white/5 p-1 rounded-xl mb-6 border border-white/5">
+              <button id="auth-tab-login" type="button" class="flex-1 py-1.5 text-xs font-bold text-white rounded-lg bg-white/10 transition-all cursor-pointer">Log In</button>
+              <button id="auth-tab-signup" type="button" class="flex-1 py-1.5 text-xs font-bold text-gray-400 hover:text-white rounded-lg transition-all cursor-pointer">Sign Up</button>
+            </div>
+
+            <!-- Dynamic form title/subtitle -->
+            <div id="auth-header" class="mb-5">
+              <h2 id="auth-title" class="text-lg font-bold font-display tracking-tight text-white">Welcome Back</h2>
+              <p id="auth-subtitle" class="text-xs text-gray-400 mt-1 leading-relaxed">Sign in to access your custom visual expense analytics and financial models.</p>
+            </div>
+
+            <!-- Auth Error Alert Container -->
+            <div id="auth-error-alert" class="hidden p-3 mb-4 bg-danger/10 border border-danger/20 rounded-xl flex items-center gap-2 text-left text-[11px] text-red-400">
+              <svg class="w-4 h-4 shrink-0 animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              <span id="auth-error-text">Incorrect credentials</span>
+            </div>
+
+            <form id="auth-form" class="space-y-3.5" onsubmit="return false;">
+              <!-- Full Name Form Field (Only on Sign Up, hidden by default) -->
+              <div id="auth-fullname-container" class="form-field hidden">
+                <input type="text" id="auth-fullname" class="w-full px-4 py-2.5 bg-[#161920]/80 rounded-xl border border-white/10 text-white text-xs placeholder-transparent" placeholder="Full Name" />
+                <label for="auth-fullname">Enter full name</label>
+              </div>
+
+              <!-- Email Form Field -->
+              <div class="form-field">
+                <input type="email" id="auth-email" class="w-full px-4 py-2.5 bg-[#161920]/80 rounded-xl border border-white/10 text-white text-xs placeholder-transparent" placeholder="Email Address" required />
+                <label for="auth-email">Enter email address</label>
+              </div>
+
+              <!-- Password Form Field -->
+              <div class="form-field">
+                <input type="password" id="auth-password" class="w-full px-4 py-2.5 bg-[#161920]/80 rounded-xl border border-white/10 text-white text-xs placeholder-transparent" placeholder="Password" required />
+                <label for="auth-password">Enter password</label>
+              </div>
+
+              <!-- Profile Setup Fields (Only on Sign Up, hidden by default) -->
+              <div id="auth-signup-fields" class="space-y-3.5 hidden">
+                <div id="grid-fields" class="grid grid-cols-2 gap-3">
+                  <div class="form-field">
+                    <input type="number" id="auth-income" class="w-full px-4 py-2.5 bg-[#161920]/80 rounded-xl border border-white/10 text-white text-xs placeholder-transparent" placeholder="Monthly income" value="650000" />
+                    <label for="auth-income">Monthly income</label>
+                  </div>
+
+                  <div class="form-field">
+                    <select id="auth-currency" class="w-full px-4 py-2.5 bg-[#161920]/80 rounded-xl border border-white/10 text-white text-xs placeholder-transparent focus:bg-[#161920]">
+                      <option value="₦">Naira (₦)</option>
+                      <option value="$">US Dollar ($)</option>
+                      <option value="€">Euro (€)</option>
+                      <option value="£">Pound (£)</option>
+                    </select>
+                    <label for="auth-currency">Currency</label>
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <input type="number" id="auth-budget" class="w-full px-4 py-2.5 bg-[#161920]/80 rounded-xl border border-white/10 text-white text-xs placeholder-transparent" placeholder="Target budget limit" value="400000" />
+                  <label for="auth-budget">Monthly budget limit</label>
+                </div>
+              </div>
+
+              <button type="submit" id="auth-submit-btn" class="w-full mt-4 py-3 bg-gradient-to-r from-primary to-[#623aff] hover:scale-[1.02] duration-200 text-white text-xs font-bold rounded-xl shadow-xl hover:shadow-primary/20 flex items-center justify-center gap-2 cursor-pointer">
+                <span id="auth-submit-btn-text">Log In To Console</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+              </button>
+            </form>
+
+            <!-- Quick Demo Accounts Assist -->
+            <div class="mt-5 pt-3.5 border-t border-white/5 text-center text-[10px] text-gray-500">
+              <p>Demo Email: <span class="font-bold text-gray-400">demo@trackwise.ai</span></p>
+              <p class="mt-0.5">Demo Password: <span class="font-bold text-gray-400">password</span></p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Section: Gorgeous grid points of features -->
+      <section id="features" class="border-t border-white/[0.05] bg-[#0A0C14] py-16">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="text-center max-w-xl mx-auto mb-12">
+            <h2 class="text-2xl font-bold font-display text-white">Full-Stack Capability, Zero Server Fatigue</h2>
+            <p class="text-xs text-gray-400 mt-2">All data remains completely sandboxed inside your local browser module while maintaining accurate, premium features.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 bg-[#070913]/50 border border-white/[0.04] rounded-2xl space-y-3">
+              <div class="w-10 h-10 bg-[#7C5CFF]/10 text-[#7C5CFF] rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" /><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21a7.5 7.5 0 00-13.5 0" /></svg>
+              </div>
+              <h3 class="text-sm font-bold text-white font-display">Multi-Currency Capability</h3>
+              <p class="text-xs text-gray-400 leading-relaxed">Dynamic conversion schemas supporting Naira, USD, Euros, or Pounds. Toggle between local baselines seamlessly.</p>
+            </div>
+
+            <div class="p-6 bg-[#070913]/50 border border-white/[0.04] rounded-2xl space-y-3">
+              <div class="w-10 h-10 bg-accent/10 text-accent rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l3.582-1.353A9 9 0 1121 12c0 2.275-.845 4.354-2.24 5.952l-1.045-1.045M9.813 15.904L14.5 12" /></svg>
+              </div>
+              <h3 class="text-sm font-bold text-white font-display">Active Predictive Modelling</h3>
+              <p class="text-xs text-gray-400 leading-relaxed">Runs background diagnostics on spent items to estimate custom runrates and alerts for remaining month segments.</p>
+            </div>
+
+            <div class="p-6 bg-[#070913]/50 border border-white/[0.04] rounded-2xl space-y-3">
+              <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
+              </div>
+              <h3 class="text-sm font-bold text-white font-display">Fortified Authentication Shield</h3>
+              <p class="text-xs text-gray-400 leading-relaxed">Strict cryptographic passwords assigned per workspace. Nobody else is capable of accessing your custom budget logs.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Metrics / Statistics of active system -->
+      <section id="metrics" class="bg-[#070913] py-16 scroll-mt-12 text-center border-t border-white/[0.05]">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="max-w-xl mx-auto mb-10 text-center">
+            <h2 class="text-2xl font-bold font-display text-white">Live Operations Shield</h2>
+            <p class="text-xs text-gray-400 mt-2">Active telemetry metrics representing the automated smart accounting layer.</p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="p-6 bg-white/[0.01] border border-white/[0.03] rounded-2xl">
+              <div class="text-[10px] text-gray-400 font-medium font-mono uppercase">User base</div>
+              <div class="text-2xl font-bold text-white mt-1">45,180+</div>
+            </div>
+            <div class="p-6 bg-white/[0.01] border border-white/[0.03] rounded-2xl">
+              <div class="text-[10px] text-gray-400 font-medium font-mono uppercase">Decisions computed</div>
+              <div class="text-2xl font-bold text-accent mt-1">1.2M+</div>
+            </div>
+            <div class="p-6 bg-white/[0.01] border border-white/[0.03] rounded-2xl">
+              <div class="text-[10px] text-gray-400 font-medium font-mono uppercase">Uptime rate</div>
+              <div class="text-2xl font-bold text-white mt-1">99.99%</div>
+            </div>
+            <div class="p-6 bg-white/[0.01] border border-white/[0.03] rounded-2xl">
+              <div class="text-[10px] text-gray-400 font-medium font-mono uppercase">Cloud Node</div>
+              <div class="text-2xl font-bold text-primary mt-1">Active</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clean Minimal Footer -->
+      <footer class="w-full border-t border-white/[0.05] bg-[#05060d] py-8 text-center mt-auto">
+        <p class="text-[10px] text-gray-500 font-mono">
+          &copy; 2026 TrackWise AI. Sandbox Sandbox Analytics. Encrypted Secure Bookkeeping Framework.
+        </p>
+      </footer>
+    </div>
+
+    <!-- ONBOARDING OVERLAY SCREEN (GLASSMORPHISM) -->
+    <div id="onboarding-screen" class="fixed inset-0 bg-[#0A0C10]/95 backdrop-blur-2xl items-center justify-center hidden z-[1000] p-4 text-center">
+      <div class="glass max-w-md w-full p-8 rounded-3xl border border-white/10 shadow-3xl text-left relative overflow-hidden animate-fade-in-scale">
+        <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+        <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-accent/10 rounded-full blur-2xl"></div>
+        
+        <!-- Logo -->
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-accent p-0.5 flex items-center justify-center shadow-lg">
+            <div class="w-full h-full rounded-[10px] bg-[#0E1015] flex items-center justify-center">
+              <svg class="w-5 h-5 text-accent animate-pulse" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75c0 .414-.168.75-.5.75s-.5-.336-.5-.75.168-.75.5-.75.5.336.5.75zM14.25 9.75c0 .414-.168.75-.5.75s-.5-.336-.5-.75.168-.75.5-.75.5.336.5.75z" />
+              </svg>
+            </div>
+          </div>
+          <span class="text-xl font-bold font-display tracking-tight text-white bg-clip-text">TrackWise <span class="text-accent">AI</span></span>
+        </div>
+
+        <h2 class="text-2xl font-bold font-display tracking-tight text-white mb-2">Master Your Money</h2>
+        <p class="text-sm text-gray-400 mb-6 leading-relaxed">Welcome to the future of smart bookkeeping. Set your parameters to load customized analytics and intelligence.</p>
+
+        <!-- Form fields inside Onboarding -->
+        <div class="space-y-4">
+          <div class="form-field">
+            <input type="text" id="onboard-name" class="w-full px-4 py-3 bg-[#161920]/80 rounded-xl border border-white/10 text-white placeholder-transparent" placeholder="Full name" value="Favour Marvellous" required />
+            <label for="onboard-name">Enter your name</label>
+          </div>
+
+          <div class="form-field">
+            <input type="number" id="onboard-budget" class="w-full px-4 py-3 bg-[#161920]/80 rounded-xl border border-white/10 text-white placeholder-transparent" placeholder="Budget goal amount" value="400000" required />
+            <label for="onboard-budget">Target monthly budget limit</label>
+          </div>
+
+          <div class="form-field">
+            <select id="onboard-currency" class="w-full px-4 py-3 bg-[#161920]/80 rounded-xl border border-white/10 text-white placeholder-transparent focus:bg-[#161920]" required>
+              <option value="₦" selected>Nigerian Naira (₦)</option>
+              <option value="$">US Dollar ($)</option>
+              <option value="€">Euro (€)</option>
+              <option value="£">Pound Sterling (£)</option>
+            </select>
+            <label for="onboard-currency">Preferred Currency symbol</label>
+          </div>
+        </div>
+
+        <button id="submit-onboarding-btn" class="w-full mt-6 py-3.5 bg-gradient-to-r from-primary to-[#623aff] hover:scale-[1.02] duration-200 text-white font-medium rounded-xl shadow-xl hover:shadow-primary/20 flex items-center justify-center gap-2 cursor-pointer">
+          Complete Setup
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- MAIN EXPORT / EDIT / ADD EXPEND MODAL (GLASSMORPHISM) -->
+    <div id="expense-modal" class="fixed inset-0 bg-black/60 backdrop-blur-md items-center justify-center hidden z-[1100] p-4">
+      <div class="glass-modal max-w-lg w-full p-7 rounded-2xl border border-white/10 shadow-3xl relative overflow-hidden animate-fade-in-scale">
+        <button id="close-modal-btn" class="absolute top-5 right-5 text-gray-400 hover:text-white transition-colors cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+
+        <h3 id="modal-action-title" class="text-xl font-bold font-display tracking-tight text-white mb-6">Log New Expense Entry</h3>
+
+        <form class="space-y-4">
+          <!-- Floating Form Fields -->
+          <div class="form-field">
+            <input type="text" id="modal-exp-name" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-transparent" placeholder="Company lunch" required />
+            <label for="modal-exp-name">Expense item name</label>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="form-field">
+              <input type="number" id="modal-exp-amount" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-transparent" placeholder="45000" required />
+              <label for="modal-exp-amount">Amount spent</label>
+            </div>
+            
+            <div class="form-field">
+              <select id="modal-exp-cat" class="w-full px-4 py-3 bg-[#1c1e28] border border-white/10 rounded-xl text-white placeholder-transparent focus:bg-[#11131c]" required>
+                <option value="Software & SaaS">Software & SaaS</option>
+                <option value="Rent & Office">Rent & Office</option>
+                <option value="Transport">Transport</option>
+                <option value="Food & Dining">Food & Dining</option>
+                <option value="Utilities">Utilities</option>
+                <option value="Consulting & Legal">Consulting & Legal</option>
+                <option value="Other">Other</option>
+              </select>
+              <label for="modal-exp-cat">Category group</label>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="form-field">
+              <input type="date" id="modal-exp-date" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-transparent" required />
+              <label for="modal-exp-date">Date log</label>
+            </div>
+
+            <div class="form-field">
+              <select id="modal-exp-method" class="w-full px-4 py-3 bg-[#1c1e28] border border-white/10 rounded-xl text-white placeholder-transparent focus:bg-[#11131c]" required>
+                <option value="Corporate Visa Card">Corporate Visa Card</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+                <option value="Zenith Direct Pay">Zenith Pay</option>
+                <option value="Verve Card">Verve Card</option>
+                <option value="Cash">Cash</option>
+              </select>
+              <label for="modal-exp-method">Payment method</label>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <textarea id="modal-exp-desc" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-transparent h-20 resize-none" placeholder="Description information"></textarea>
+            <label for="modal-exp-desc">Brief transaction brief (Optional)</label>
+          </div>
+
+          <button id="submit-expense-btn" class="w-full py-3.5 bg-gradient-to-r from-primary to-accent hover:opacity-90 duration-200 text-white font-semibold rounded-xl flex items-center justify-center gap-2 cursor-pointer shadow-lg">
+            <span id="modal-action-btn-text">Record Statement</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- MAIN CONTAINER WRAPPER -->
+    <div class="flex-1 flex overflow-hidden">
+
+      <!-- LEFT SIDEBAR -->
+      <aside id="sidebar" class="bg-[#0E1015]/95 border-r border-white/[0.06] w-64 shrink-0 flex flex-col collapsed lg:translate-x-0 h-full">
+        <!-- Logo Header -->
+        <div class="p-6 border-b border-white/[0.06] flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary to-accent p-0.5 flex items-center justify-center shadow-md shadow-primary/20">
+              <div class="w-full h-full rounded-[10px] bg-[#0E1015] flex items-center justify-center">
+                <svg class="w-4.5 h-4.5 text-accent" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75c0 .414-.168.75-.5.75s-.5-.336-.5-.75.168-.75.5-.75.5.336.5.75zM14.25 9.75c0 .414-.168.75-.5.75s-.5-.336-.5-.75.168-.75.5-.75.5.336.5.75z" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h1 class="text-base font-bold font-display tracking-tight text-white">TrackWise <span class="text-accent">AI</span></h1>
+              <p class="text-[9px] text-gray-500 font-semibold uppercase leading-none tracking-widest mt-0.5">SaaS Core v1.3</p>
+            </div>
+          </div>
+          <button id="sidebar-close-btn" class="lg:hidden p-1.5 bg-white/5 hover:bg-white/10 rounded-lg text-gray-400 hover:text-white transition-colors cursor-pointer" title="Close menu">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Scroll navigation -->
+        <nav class="flex-1 overflow-y-auto px-4 py-6 space-y-1.5 scroll-area">
+          <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2 px-3">Primary Console</p>
+          
+          <button class="sidebar-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/[0.03] transition-all text-left cursor-pointer nav-active" data-view="dashboard">
+            <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+            Dashboard
+          </button>
+
+          <button class="sidebar-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/[0.03] transition-all text-left cursor-pointer" data-view="dashboard" onclick="document.getElementById('table-card-anchor').scrollIntoView({ behavior: 'smooth' })">
+            <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-3.75 5.25h.008v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg>
+            Expenses
+          </button>
+
+          <button class="sidebar-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/[0.03] transition-all text-left cursor-pointer" data-view="dashboard" onclick="document.getElementById('analytics-cards-anchor').scrollIntoView({ behavior: 'smooth' })">
+            <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" /><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" /></svg>
+            Analytics
+          </button>
+
+          <button class="sidebar-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/[0.03] transition-all text-left cursor-pointer" data-view="dashboard" onclick="document.getElementById('budget-goals-anchor').scrollIntoView({ behavior: 'smooth' })">
+            <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.251-.11a3.371 3.371 0 001.32-.835 3.353 2.353 0 00.1-.1v-4.75h-.008z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0z" /></svg>
+            Budget Goals
+          </button>
+
+          <button class="sidebar-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/[0.03] transition-all text-left cursor-pointer" data-view="dashboard" onclick="document.getElementById('ai-insights-anchor').scrollIntoView({ behavior: 'smooth' })">
+            <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l3.582-1.353A9 9 0 1121 12c0 2.275-.845 4.354-2.24 5.952l-1.045-1.045M9.813 15.904L14.5 12" /></svg>
+            AI Insights
+          </button>
+
+          <button class="sidebar-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/[0.03] transition-all text-left cursor-pointer" data-view="ai-assistant">
+            <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" /></svg>
+            AI Chat Assistant
+          </button>
+
+          <div class="h-px bg-white/[0.06] my-4"></div>
+          
+          <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2 px-3">System utilities</p>
+
+          <button id="export-data-left-btn" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/[0.03] transition-all text-left cursor-pointer">
+            <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+            Export CSV Data
+          </button>
+
+          <button class="sidebar-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/[0.03] transition-all text-left cursor-pointer" data-view="settings">
+            <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.43l-1.003.828c-.3.248-.44.633-.37 1.013.003.018.007.037.007.056H18c-.003-.018-.007-.037-.007-.056-.07-.38.07-.765.37-1.013l1.003-.828a1.125 1.125 0 00-.26-1.43l-1.296-2.247a1.125 1.125 0 00-1.37-.49l-1.216.456c-.356.133-.75.072-1.076-.124-.072-.044-.146-.087-.22-.128-.332-.183-.582-.495-.644-.869L13.52 3.94z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            Workspace Settings
+          </button>
+
+          <!-- Sleek Pro Plan Card -->
+          <div class="mt-8 p-4 bg-white/5 rounded-2xl border border-white/10 mx-1">
+            <div class="text-[10px] text-[#00E5A8] font-bold uppercase tracking-widest mb-1.5 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#00E5A8] animate-pulse"></span>
+              Pro Plan Active
+            </div>
+            <div class="text-[11px] text-gray-400 leading-normal">Unlock active premium forecasting models & automatic insights.</div>
+            <button class="mt-3.5 w-full py-2 bg-[#7C5CFF] hover:bg-[#623aff] text-white rounded-xl text-[11px] font-bold tracking-wide transition-colors cursor-pointer text-center">Manage Level</button>
+          </div>
+        </nav>
+
+        <!-- Sidebar footer -->
+        <div class="p-4 border-t border-white/[0.06] flex items-center justify-between gap-2.5">
+          <div class="flex items-center gap-3 overflow-hidden">
+            <img class="user-display-avatar w-10 h-10 rounded-full border border-white/10 shrink-0" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="avatar" />
+            <div class="overflow-hidden">
+              <p class="user-display-name text-xs font-bold text-white truncate">Favour Marvellous</p>
+              <p class="text-[9.5px] text-accent font-semibold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                Advisor Online
+              </p>
+            </div>
+          </div>
+          <button id="sidebar-logout-btn" class="p-1.5 bg-white/5 hover:bg-rose-500/10 rounded-lg text-gray-400 hover:text-rose-400 transition-colors cursor-pointer shrink-0" title="Log Out Session">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 19.5h6a2.25 2.25 0 002.25-2.25V15" /></svg>
+          </button>
+        </div>
+      </aside>
+
+      <!-- MAIN APP CONTAINER -->
+      <main class="flex-1 flex flex-col overflow-y-auto min-w-0 bg-[#0F1117] relative">
+        
+        <!-- TOP NAVBAR -->
+        <header class="h-16 border-b border-white/[0.06] flex items-center justify-between px-6 shrink-0 relative bg-[#0E1015]/60 backdrop-blur-md sticky top-0 z-50">
+          
+          <div class="flex items-center gap-4">
+            <!-- Mobile Burger -->
+            <button id="sidebar-hamburger-btn" class="lg:hidden p-2 bg-white/5 rounded-lg text-gray-400 hover:text-white cursor-pointer">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+            </button>
+            
+            <!-- Quick Search Bar mapping -->
+            <div class="relative max-w-sm w-44 sm:w-64">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 pointer-events-none">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196 7.5 7.5 0 0010.607 10.607z" /></svg>
+              </span>
+              <input type="text" id="table-search-input" class="w-full bg-white/5 border border-white/[0.08] text-xs text-white rounded-lg pl-9 pr-4 py-2 placeholder-gray-500 focus:outline-none focus:border-primary/50 transition-colors" placeholder="Quick find transactions (ALT + N)" />
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2 sm:gap-4">
+            <!-- Theme toggle -->
+            <button id="theme-toggle-btn" class="p-2 hover:bg-white/5 rounded-lg text-gray-400 hover:text-white transition-colors cursor-pointer" title="Toggle color scheme">
+              <svg id="theme-toggle-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m14.5-6.5l-1.5 1.5M6.5 17.5L5 19M19 19l-1.5-1.5M6.5 6.5l1.5 1.5M12 8a4 4 0 100 8 4 4 0 000-8z" />
+              </svg>
+            </button>
+
+            <!-- Notification Bell with Dropdown -->
+            <div class="relative">
+              <button id="notifications-trigger" class="p-2 hover:bg-white/5 rounded-lg text-gray-400 hover:text-white transition-colors cursor-pointer relative">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" /></svg>
+                <!-- Badge counts -->
+                <span id="notifications-count-badge" class="absolute top-1 right-1 w-4 h-4 bg-danger text-[9px] text-white font-bold rounded-full flex items-center justify-center animate-pulse">2</span>
+              </button>
+
+              <!-- Dropdown Panel -->
+              <div id="notifications-dropdown" class="dropdown-menu absolute right-0 mt-2 w-80 bg-[#12141c]/95 border border-white/[0.08] backdrop-blur-xl rounded-xl shadow-3xl text-left overflow-hidden z-[100] py-2">
+                <div class="px-4 py-2 border-b border-white/[0.04] flex items-center justify-between">
+                  <span class="text-xs font-bold text-white uppercase tracking-wider">Alerts & Logs</span>
+                  <span class="text-[9px] text-accent font-semibold uppercase">Real-Time</span>
+                </div>
+                <!-- Dynamic alerts entries list -->
+                <div id="notifications-dropdown-list" class="max-h-64 overflow-y-auto scroll-area"></div>
+              </div>
+            </div>
+
+            <!-- User profile dropdown summary -->
+            <div class="relative">
+              <button id="profile-trigger" class="flex items-center gap-2 hover:bg-white/5 px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer text-left">
+                <img class="user-display-avatar w-7.5 h-7.5 rounded-full border border-white/10 shrink-0" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="profile" />
+                <span class="user-display-name text-xs font-medium text-white hidden sm:block truncate max-w-[100px]">Favour Marvellous</span>
+                <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+              </button>
+
+              <!-- Profile Dropdown panel item operations -->
+              <div id="profile-dropdown" class="dropdown-menu absolute right-0 mt-2 w-52 bg-[#12141c]/95 border border-white/[0.08] backdrop-blur-xl rounded-xl shadow-3xl overflow-hidden py-1.5 z-[100] text-sm">
+                <div class="px-4 py-2.5 border-b border-white/[0.04] select-none text-left">
+                  <p class="user-display-name text-xs font-bold text-white truncate">Favour Marvellous</p>
+                  <p class="text-[10px] text-gray-500 truncate mt-0.5">SaaS Administrator</p>
+                </div>
+                <button class="w-full text-left px-4 py-2 hover:bg-white/5 text-gray-300 hover:text-white flex items-center gap-2 cursor-pointer text-xs" onclick="const s = document.querySelector('[data-view=settings]'); if (s) s.click()">
+                  <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.43l-1.003.828c-.3.248-.44.633-.37 1.013" /></svg>
+                  System Preferences
+                </button>
+                <div class="h-px bg-white/[0.04] my-1"></div>
+                <button id="profile-signout" class="w-full text-left px-4 py-2 hover:bg-white/5 text-rose-400 font-medium flex items-center gap-2 cursor-pointer text-xs">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 19.5h6a2.25 2.25 0 002.25-2.25V15" /></svg>
+                  Log Out Session
+                </button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- MAIN SCROLLABLE CONTENT BODY -->
+        <div class="flex-1 p-6 space-y-6 container mx-auto max-w-7xl">
+
+          <!-- WELCOME HERO HERO BANNER -->
+          <section id="welcome-hero-banner" class="glass bg-gradient-to-r from-primary/10 via-[#0E1015]/40 to-accent/5 max-w-7xl mx-auto rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between border border-white/[0.08] relative overflow-hidden animate-fade-in-up">
+            <!-- decorative circles background -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-primary/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="space-y-3 max-w-xl text-center md:text-left z-10">
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-[10px] font-bold text-white uppercase tracking-wider">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent animate-ping"></span>
+                SaaS Dashboard 2026 UI/UX
+              </div>
+              <h2 class="text-2xl md:text-4xl font-extrabold font-display tracking-tight text-white leading-tight">Master Your Money With <span class="text-accent">Smart Analytics</span></h2>
+              <p class="text-xs md:text-sm text-gray-400 leading-relaxed max-w-lg">TrackWise AI provides state-of-the-art interactive statistics, custom vector models, and intelligent financial indicators to keep statements robustly stable.</p>
+              
+              <!-- Keyboard shortcuts indicator tip -->
+              <div class="pt-3 flex flex-wrap justify-center md:justify-start gap-3 text-[10px] text-gray-500 font-mono">
+                <span class="flex items-center gap-1.5"><kbd class="bg-white/10 px-1.5 py-0.5 rounded text-white text-[9px]">ALT + N</kbd> Record Expense</span>
+                <span class="flex items-center gap-1.5"><kbd class="bg-white/10 px-1.5 py-0.5 rounded text-white text-[9px]">ESC</kbd> Close Forms</span>
+              </div>
+            </div>
+
+            <!-- Premium Illustrator mock shapes -->
+            <div class="mt-6 md:mt-0 relative w-full md:w-56 h-36 flex items-center justify-center select-none shrink-0 z-10 animate-float">
+              <svg class="w-48 h-32 text-primary opacity-90 drop-shadow-3xl" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Abstract financial charts vector illustration -->
+                <path d="M10 130 H 190" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round" />
+                <path d="M10 130 L 50 90 L 90 110 L 130 50 L 170 20" stroke="url(#lineGrad)" stroke-width="4" stroke-linecap="round" />
+                <circle cx="170" cy="20" r="6" fill="#00E5A8" class="animate-pulse" />
+                <!-- Bars mock shadows -->
+                <rect class="fill-accentOpacity" x="35" y="65" width="12" height="65" rx="3" fill="#00E5A8" opacity="0.15" />
+                <rect class="fill-primaryOpacity" x="115" y="45" width="12" height="85" rx="3" fill="#7C5CFF" opacity="0.30" />
+                <defs>
+                  <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#7C5CFF" />
+                    <stop offset="100%" stop-color="#00E5A8" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </section>
+
+          <!-- SETTINGS CONTAINER (HIDDEN BY DEFAULT) -->
+          <section id="settings-main-grid" class="hidden space-y-6 max-w-7xl mx-auto animate-fade-in-scale">
+            <!-- Settings Card -->
+            <div class="glass p-8 rounded-3xl border border-white/[0.08]">
+              <div class="flex items-center justify-between mb-8 border-b border-white/[0.06] pb-4">
+                <div class="flex items-center gap-3">
+                  <div class="p-2.5 bg-primary/10 rounded-xl">
+                    <svg class="w-5.5 h-5.5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.43l-1.003.828c-.3.248-.44.633-.37 1.013" /></svg>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold font-display text-white">Workspace Preferences</h3>
+                    <p class="text-xs text-gray-400">Configure layout preferences, budgets, currency and billing thresholds.</p>
+                  </div>
+                </div>
+                <span class="text-[10px] font-mono text-gray-500">Workspace Sandbox #2026</span>
+              </div>
+
+              <!-- Options Grid Layout -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Profile Settings -->
+                <div class="space-y-4">
+                  <h4 class="text-xs font-bold text-accent uppercase tracking-wider mb-2">User Identity Profile</h4>
+                  
+                  <div class="form-field">
+                    <input type="text" id="pref-user-name" class="w-full px-4 py-3 bg-white/5 border border-white/[0.08] rounded-xl text-white placeholder-transparent" placeholder="Favour Marvellous" />
+                    <label for="pref-user-name">Full name</label>
+                  </div>
+
+                  <div class="form-field">
+                    <input type="number" id="pref-monthly-income" class="w-full px-4 py-3 bg-white/5 border border-white/[0.08] rounded-xl text-white placeholder-transparent" placeholder="650000" />
+                    <label for="pref-monthly-income">Monthly income amount (Naira baseline)</label>
+                  </div>
+
+                  <div class="form-field">
+                    <select id="pref-currency" class="w-full px-4 py-3 bg-[#11131a] border border-white/[0.08] rounded-xl text-white placeholder-transparent focus:bg-[#0e0f15]">
+                      <option value="₦">Nigerian Naira (₦)</option>
+                      <option value="$">US Dollar ($)</option>
+                      <option value="€">Euro (€)</option>
+                      <option value="£">Pound Sterling (£)</option>
+                    </select>
+                    <label for="pref-currency">Preferred currency prefix symbol</label>
+                  </div>
+
+                  <div class="form-field">
+                    <input type="password" id="pref-user-password" class="w-full px-4 py-3 bg-white/5 border border-white/[0.08] rounded-xl text-white placeholder-transparent" placeholder="••••••••" required />
+                    <label for="pref-user-password">Security Password</label>
+                  </div>
+                </div>
+
+                <!-- Budget Caps Settings -->
+                <div class="space-y-4">
+                  <h4 class="text-xs font-bold text-primary uppercase tracking-wider mb-2">System Budget Goals</h4>
+                  
+                  <div class="form-field">
+                    <input type="number" id="pref-total-budget" class="w-full px-4 py-3 bg-white/5 border border-white/[0.08] rounded-xl text-white placeholder-transparent" placeholder="400000" />
+                    <label for="pref-total-budget">Combined monthly budget threshold</label>
+                  </div>
+
+                  <div class="p-4 bg-white/[0.02] border border-white/[0.05] rounded-2xl text-xs space-y-1">
+                    <div class="flex justify-between text-gray-400">
+                      <span>Category Budgets (Precalculated limits)</span>
+                      <span class="text-white font-medium">Automatic Scale mapping</span>
+                    </div>
+                    <p class="text-[11px] text-gray-500 leading-normal">Individual category budgets (e.g. Food, Transport, Software) scale relative to corporate income margins. No manual intervention required.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer CTA Buttons -->
+              <div class="mt-8 pt-6 border-t border-white/[0.06] flex flex-wrap items-center justify-between gap-4">
+                <button id="pref-danger-reset" class="px-5 py-3 border border-rose-500/30 hover:bg-rose-500/10 text-rose-400 font-medium text-xs rounded-xl cursor-pointer duration-200">
+                  Reset Workspace Data
+                </button>
+                <div class="flex items-center gap-3">
+                  <button class="px-5 py-3 hover:bg-white/5 text-gray-400 hover:text-white text-xs font-semibold rounded-xl" onclick="const d = document.querySelector('[data-view=dashboard]'); if (d) d.click()">
+                    Cancel Changes
+                  </button>
+                  <button id="save-prefs-btn" class="px-6 py-3 bg-gradient-to-r from-primary to-[#623aff] text-white text-xs font-bold hover:scale-[1.02] rounded-xl cursor-pointer shadow-lg shadow-primary/10">
+                    Apply Preferences Changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- MAIN PORTFOLIO DASHBOARD PANELS (DASHBOARD GRID) -->
+          <div id="dashboard-main-grid" class="space-y-6 max-w-7xl mx-auto">
+            
+            <!-- TOP STATISTICS PANEL BENTO GRID -->
+            <section class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="stats-cards-anchor">
+              <!-- Grid Card 1: Total Balance -->
+              <div class="glass p-5 rounded-2xl premium-glow-card flex flex-col justify-between overflow-hidden">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-[11px] font-bold text-gray-500 uppercase tracking-widest leading-none">Total Balance</span>
+                  <div class="p-2 bg-accent/10 rounded-lg text-accent shrink-0 select-none">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.251-.11a3.371 3.371 0 001.32-.835 3.353 3.353 0 00.1-.1V6.75h-.008" /></svg>
+                  </div>
+                </div>
+                <!-- Shimmer skeletons -->
+                <div class="main-skeleton-data w-24 h-7 skeleton-loading rounded mb-1"></div>
+                <span id="stat-total-balance" class="main-card-data text-xl sm:text-2xl font-bold font-display text-white tracking-tight leading-none mb-1">₦0</span>
+                <p class="text-[10px] text-accent font-semibold leading-none mt-1">Available income overhead</p>
+              </div>
+
+              <!-- Grid Card 2: Combined Expense -->
+              <div class="glass p-5 rounded-2xl premium-glow-card flex flex-col justify-between overflow-hidden">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-[11px] font-bold text-gray-500 uppercase tracking-widest leading-none">Monthly Spent</span>
+                  <div class="p-2 bg-primary/10 rounded-lg text-primary shrink-0 select-none">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5h16.5M5.25 7.5h13.5m-12 3h10.5m-12 3h13.5m-15 3h16.5" /></svg>
+                  </div>
+                </div>
+                <div class="main-skeleton-data w-24 h-7 skeleton-loading rounded mb-1"></div>
+                <span id="stat-monthly-spending" class="main-card-data text-xl sm:text-2xl font-bold font-display text-white tracking-tight leading-none mb-1">₦0</span>
+                <p class="text-[10px] text-gray-400 font-semibold leading-none mt-1">Total outgoings logged</p>
+              </div>
+
+              <!-- Grid Card 3: Combined Budget Remaining -->
+              <div class="glass p-5 rounded-2xl premium-glow-card flex flex-col justify-between overflow-hidden">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-[11px] font-bold text-gray-500 uppercase tracking-widest leading-none">Budget Rest</span>
+                  <div class="p-2 bg-amber-500/10 rounded-lg text-amber-500 shrink-0 select-none">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6a3.75 3.75 0 100 7.5a3.75 3.75 0 000-7.5zm0-3v3m0 7.5V18m0 3v1m0-1c-1.11" /></svg>
+                  </div>
+                </div>
+                <div class="main-skeleton-data w-24 h-7 skeleton-loading rounded mb-1"></div>
+                <span id="stat-budget-remaining" class="main-card-data text-xl sm:text-2xl font-bold font-display text-white tracking-tight leading-none mb-1">₦0</span>
+                <p class="text-[10px] text-gray-400 font-semibold leading-none mt-1">Target limit threshold</p>
+              </div>
+
+              <!-- Grid Card 4: Monthly savings rate percentage metric -->
+              <div class="glass p-5 rounded-2xl premium-glow-card flex flex-col justify-between overflow-hidden">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-[11px] font-bold text-gray-500 uppercase tracking-widest leading-none">Savings Ratio</span>
+                  <div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-400 shrink-0 select-none">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18H21.75M2.25 18a2.25 2.25 0 002.25 2.25H19.5A2.25 2.25 0 0021.75 18M2.25 18V6.75A2.25 2.25 0 014.5 4.5h15a2.25 2.25 0 012.25 2.25V18" /></svg>
+                  </div>
+                </div>
+                <div class="main-skeleton-data w-24 h-7 skeleton-loading rounded mb-1"></div>
+                <span id="stat-savings-rate" class="main-card-data text-xl sm:text-2xl font-bold font-display text-white tracking-tight leading-none mb-1">0%</span>
+                <p class="text-[10px] text-gray-400 font-semibold leading-none mt-1">Saving quotient margin</p>
+              </div>
+            </section>
+
+            <!-- ANALYTICS SECTION BENTO GRID LAYOUT PANEL -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-6" id="analytics-cards-anchor">
+              
+              <!-- Left Bento: Line Trend Chart -->
+              <div class="glass p-5 rounded-2xl border border-white/[0.06] flex flex-col h-80 lg:col-span-2 overflow-hidden relative">
+                <!-- HTML dynamic canvas tooltip placeholder -->
+                <div id="chart-tooltip" class="absolute pointer-events-none hidden glass p-2 rounded-lg text-white border border-white/20 select-none z-50 text-[11px] font-sans">Tooltip text</div>
+                
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+                    <h3 class="text-xs font-bold text-white uppercase tracking-wider">Overall Spending Trend Curve</h3>
+                  </div>
+                  <span class="text-[10px] font-mono text-gray-500">Curvature spline</span>
+                </div>
+                <!-- Line trend output target -->
+                <div id="chart-line-container" class="flex-1 w-full min-h-0 relative"></div>
+              </div>
+
+              <!-- Right Bento: Category Pie/Donut Chart breakdown -->
+              <div class="glass p-5 rounded-2xl border border-white/[0.06] flex flex-col h-80 overflow-hidden relative">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></div>
+                    <h3 class="text-xs font-bold text-white uppercase tracking-wider">Expense Categories Breakdown</h3>
+                  </div>
+                  <span class="text-[10px] font-mono text-gray-500">Segment vectors</span>
+                </div>
+                <!-- Pie donut output target -->
+                <div id="chart-pie-container" class="flex-1 w-full min-h-0 relative"></div>
+              </div>
+
+              <!-- Bottom Row Left Bento column: Monthly columns comparison -->
+              <div class="glass p-5 rounded-2xl border border-white/[0.06] flex flex-col h-80 lg:col-span-2 overflow-hidden relative">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
+                    <h3 class="text-xs font-bold text-white uppercase tracking-wider">Margin Categories Metrics</h3>
+                  </div>
+                  <span class="text-[10px] font-mono text-gray-500">Column chart</span>
+                </div>
+                <!-- Bar column output target -->
+                <div id="chart-bar-container" class="flex-1 w-full min-h-0 relative"></div>
+              </div>
+
+              <!-- Bottom Row Right Bento column: Interactive Goal Progress progress bar -->
+              <div class="glass p-5 rounded-2xl border border-white/[0.06] flex flex-col h-80 justify-between overflow-hidden relative" id="budget-goals-anchor">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
+                    <h3 class="text-xs font-bold text-white uppercase tracking-wider">Budget Goal Limits</h3>
+                  </div>
+                  <span class="text-[10px] font-mono text-gray-500">Gauge indicator</span>
+                </div>
+
+                <!-- Progress Ring Center circle -->
+                <div class="flex items-center justify-center relative my-4 w-32 h-32 mx-auto" id="budget-progress-gauge">
+                  <!-- Circular Gauge SVG injected dynamically -->
+                </div>
+
+                <!-- Custom Budget Warning alerts panel if spent > 80% -->
+                <div id="budget-goal-critical-alert" class="hidden p-3 bg-danger/10 border border-danger/20 rounded-xl items-start gap-2 text-left animate-fade-in-up">
+                  <svg class="w-4 h-4 text-danger shrink-0 mt-0.5 animate-pulse" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M2.215 19.382C1.54 20.553 2.384 22 3.75 22h16.5c1.365 0 2.21-1.447 1.534-2.618L13.732 4c-.683-1.183-2.38-1.183-3.064 0L2.215 19.382z" /></svg>
+                  <div>
+                    <h5 class="text-[11px] font-bold text-red-400">Critical Alert: Cashburn High</h5>
+                    <p class="text-[10px] text-gray-400 leading-normal">You spent <span class="critical-percentage-inject text-white font-bold">100%</span> of limits. Freezing non-essential log orders advised.</p>
+                  </div>
+                </div>
+
+                <!-- Budget Details Foot stats specs -->
+                <div class="flex items-center justify-between text-[11px] border-t border-white/[0.06] pt-3 text-gray-400">
+                  <span>Target Goals limit:</span>
+                  <span id="stat-budget-limit-headline" class="text-white font-bold font-mono">₦400,000</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- MULTI-SECTION DYNAMIC AI INSIGHTS BLOCK PANEL -->
+            <section class="glass p-5 rounded-2xl border border-white/[0.06] flex flex-col space-y-4" id="ai-insights-anchor">
+              <div class="flex items-center justify-between border-b border-white/[0.04] pb-3.5">
+                <div class="flex items-center gap-2">
+                  <div class="p-1 px-2.5 bg-primary/20 border border-primary/30 text-[10px] font-bold text-primary rounded-md uppercase">AI Advisor</div>
+                  <h3 class="text-xs font-bold text-white uppercase tracking-wider">Tailored Financial Recommendations</h3>
+                </div>
+                <span class="text-[9px] text-[#00E5A8] font-bold uppercase select-none flex items-center gap-1">
+                  💡 Dynamic feedback
+                </span>
+              </div>
+
+              <!-- List container for generative indicators -->
+              <div id="ai-insights-block-list" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Skeletons placeholders -->
+                <div class="main-skeleton-data w-full h-16 skeleton-loading rounded-xl"></div>
+                <div class="main-skeleton-data w-full h-16 skeleton-loading rounded-xl"></div>
+                <div class="main-skeleton-data w-full h-16 skeleton-loading rounded-xl"></div>
+              </div>
+            </section>
+
+            <!-- TABLE BLOCK PANEL CONTAINER MODULE -->
+            <section class="glass rounded-2xl border border-white/[0.06] overflow-hidden flex flex-col" id="table-card-anchor">
+              <!-- Inline category filter panel drawer -->
+              <div class="p-5 border-b border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                  <h3 class="text-xs font-bold text-white uppercase tracking-wider">System Transactions ledger</h3>
+                  <p class="text-[11px] text-gray-400 mt-1 leading-none">CRUD statement listings database logs.</p>
+                </div>
+
+                <!-- Input filters -->
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <select id="table-cat-filter" class="bg-white/5 border border-white/[0.08] text-[11px] text-gray-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-primary/50">
+                    <option value="All" selected>All Categories</option>
+                    <option value="Software & SaaS">Software & SaaS</option>
+                    <option value="Rent & Office">Rent & Office</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Food & Dining">Food & Dining</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Consulting & Legal">Consulting & Legal</option>
+                    <option value="Other">Other</option>
+                  </select>
+
+                  <select id="table-date-filter" class="bg-white/5 border border-white/[0.08] text-[11px] text-gray-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-primary/50">
+                    <option value="All" selected>All Time</option>
+                    <option value="Today">Recorded Today</option>
+                    <option value="Last7">Within 7 Days</option>
+                    <option value="Last30">Within 30 Days</option>
+                  </select>
+
+                  <!-- Log button -->
+                  <button id="add-expense-btn" class="bg-gradient-to-r from-primary to-accent text-xs font-bold px-4.5 py-2.5 rounded-lg flex items-center gap-1.5 hover:scale-[1.01] duration-150 cursor-pointer shadow-md text-white">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                    Record Log
+                  </button>
+                </div>
+              </div>
+
+              <!-- Main horizontal scroll table -->
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse table-auto min-w-[750px]">
+                  <thead>
+                    <tr class="border-b border-white/[0.06] bg-white/[0.01] text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                      <th class="table-sort-header py-4.5 px-4 cursor-pointer hover:text-white select-none transition-colors" data-sort-field="name">
+                        <div class="flex items-center gap-1">Expense Name <svg class="w-3 h-3 text-gray-600 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
+                      </th>
+                      <th class="table-sort-header py-4.5 px-4 cursor-pointer hover:text-white select-none transition-colors" data-sort-field="category">
+                        <div class="flex items-center gap-1">Category <svg class="w-3 h-3 text-gray-600 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
+                      </th>
+                      <th class="table-sort-header py-4.5 px-4 cursor-pointer hover:text-white select-none transition-colors animate-pull-up" data-sort-field="amount">
+                        <div class="flex items-center gap-1">Amount <svg class="w-3 h-3 text-gray-600 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
+                      </th>
+                      <th class="table-sort-header py-4.5 px-4 cursor-pointer hover:text-white select-none transition-colors" data-sort-field="date">
+                        <div class="flex items-center gap-1">Date Log <svg class="w-3 h-3 text-gray-600 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
+                      </th>
+                      <th class="py-4.5 px-4 text-gray-400">Method</th>
+                      <th class="py-4.5 px-4 text-gray-400">Status</th>
+                      <th class="py-4.5 px-4 text-right pr-6 text-gray-400">Actions</th>
+                    </tr>
+                  </thead>
+                  <!-- Dynamic render target body list -->
+                  <tbody id="expenses-table-tbody" class="divide-y divide-white/[0.02]">
+                    <!-- Injected dynamically in script app.js -->
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Footer navigation controls paging layout -->
+              <div class="p-4 border-t border-white/[0.04] flex items-center justify-between flex-col sm:flex-row gap-3">
+                <span id="table-pagination-counter" class="text-xs text-gray-500 font-medium">Showing 1 - 5 of 7 entries</span>
+                <div class="flex items-center gap-2">
+                  <button id="table-pagination-prev" class="px-3.5 py-1.5 bg-white/5 border border-white/[0.06] text-xs font-bold rounded-lg text-gray-400 hover:text-white disabled:opacity-30 disabled:pointer-events-none transition-all cursor-pointer">
+                    Previous
+                  </button>
+                  <button id="table-pagination-next" class="px-3.5 py-1.5 bg-white/5 border border-white/[0.06] text-xs font-bold rounded-lg text-gray-400 hover:text-white disabled:opacity-30 disabled:pointer-events-none transition-all cursor-pointer">
+                    Next
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Bottom utility banner card export trigger -->
+            <section class="max-w-7xl mx-auto flex items-center justify-between p-6 rounded-3xl bg-[#0E1015] border border-white/[0.08]">
+              <div class="space-y-1">
+                <h4 class="text-xs font-bold text-white uppercase tracking-wider">Offline Statements Export spreadsheet</h4>
+                <p class="text-[11px] text-gray-400">Deploy entire database logs stack to native CSV files instantly.</p>
+              </div>
+              <button id="export-csv-main-btn" class="px-5 py-3 bg-gradient-to-r from-[#1E293B] to-[#0F172A] border border-white/10 text-xs font-bold hover:bg-white/[0.03] rounded-xl cursor-pointer flex items-center gap-2 transition-all">
+                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+                Export CSV Sheet
+              </button>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- AI CHAT ASSISTANT PANEL OVERLAY SYSTEM -->
+    <!-- Trigger Button -->
+    <button id="chat-trigger" class="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-tr from-primary to-[#5c3fff] rounded-full flex items-center justify-center cursor-pointer shadow-3xl z-[500] hover:scale-105 active:scale-95 duration-200">
+      <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+        <!-- Floating chat triggers representation -->
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 18a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 13.717 3.75 12.894 3.75 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+      </svg>
+      <span class="absolute top-0 right-0 w-3.5 h-3.5 bg-accent rounded-full border-2 border-[#0F1117]"></span>
+    </button>
+
+    <!-- Floating Messenger Drawer -->
+    <div id="chat-widget" class="fixed bottom-24 right-6 w-[360px] h-[500px] glass-modal border border-white/10 rounded-2xl shadow-3xl flex flex-col overflow-hidden z-[500] collapsed-chat">
+      <!-- Glow Decorator orb -->
+      <div class="chat-glow-orb"></div>
+
+      <!-- Chat Header -->
+      <div class="p-4 border-b border-white/[0.08] flex items-center justify-between bg-primary/5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8.5 h-8.5 rounded-full bg-gradient-to-tr from-primary to-accent p-0.5 flex items-center justify-center">
+            <div class="w-full h-full rounded-full bg-[#0E1015] flex items-center justify-center">
+              <svg class="w-4 h-4 text-accent animate-pulse" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-white tracking-wide">TrackWise AI Advisor</h4>
+            <span class="text-[9.5px] text-[#00E5A8] font-bold uppercase flex items-center gap-1 mt-0.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#00E5A8] animate-ping shrink-0"></span>
+              Client Intelligence Unit
+            </span>
+          </div>
+        </div>
+
+        <button id="chat-close-btn" class="p-1 hover:bg-white/5 rounded-lg text-gray-400 hover:text-white transition-colors cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+        </button>
+      </div>
+
+      <!-- Messages content dynamic container -->
+      <div id="chat-messages" class="flex-1 overflow-y-auto px-4 py-5 scroll-area chat-messages-container text-xs space-y-4">
+        <!-- Injected dynamically in script chat.js -->
+      </div>
+
+      <!-- Typing Indicator placeholder -->
+      <div id="chat-typing" class="hidden items-center gap-2 px-6 py-1 select-none text-gray-500 text-[11px] font-mono leading-none">
+        <span class="text-accent uppercase font-bold text-[9px] mr-1">Advisor analyzing statement</span>
+        <div class="typing-dots flex gap-1 items-center">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Quick actions templates section -->
+      <div id="chat-quick-actions" class="p-2 border-t border-white/[0.04] bg-white/[0.01] flex flex-wrap gap-1.5 justify-center">
+        <button class="quick-action-pill border border-white/5 px-2.5 py-1.5 rounded-lg text-[10px] font-bold text-gray-300 hover:text-white bg-white/5 cursor-pointer max-w-[105px] truncate" data-prompt="Am I within my budget?">Budget Status</button>
+        <button class="quick-action-pill border border-white/5 px-2.5 py-1.5 rounded-lg text-[10px] font-bold text-gray-300 hover:text-white bg-white/5 cursor-pointer max-w-[105px] truncate" data-prompt="Which category costs me most?">Highest Category</button>
+        <button class="quick-action-pill border border-white/5 px-2.5 py-1.5 rounded-lg text-[10px] font-bold text-gray-300 hover:text-white bg-white/5 cursor-pointer max-w-[105px] truncate" data-prompt="Log statement trigger">Add Expense</button>
+      </div>
+
+      <!-- Input Send Panel layout -->
+      <div class="p-3 border-t border-white/[0.08] flex items-center gap-2 bg-[#0E1015]/60">
+        <input type="text" id="chat-input" class="flex-1 bg-white/5 border border-white/[0.1] text-xs text-white rounded-xl px-4 py-2.5 placeholder-gray-500 focus:outline-none focus:border-primary/50 transition-colors" placeholder="Ask AI: e.g. How much spent on food?" />
+        <button id="chat-send-btn" class="w-9 h-9 shrink-0 bg-primary hover:opacity-90 duration-200 rounded-xl flex items-center justify-center text-white cursor-pointer hover:scale-105 active:scale-95 shadow-lg">
+          <svg class="w-4 h-4 transform rotate-45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- App Orchestration controller modules -->
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,285 @@
+/* 2026 SaaS Dashboard Specific Layout and Animation Styles */
+
+/* Base animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+@keyframes pulseBorder {
+  0%, 100% {
+    border-color: rgba(124, 92, 255, 0.4);
+    box-shadow: 0 0 10px rgba(124, 92, 255, 0.2);
+  }
+  50% {
+    border-color: rgba(124, 92, 255, 0.9);
+    box-shadow: 0 0 20px rgba(124, 92, 255, 0.5);
+  }
+}
+
+/* Page Entry Animations */
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Card hover glow states */
+.premium-glow-card {
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.premium-glow-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(124, 92, 255, 0.12);
+}
+
+body.light-theme .premium-glow-card:hover {
+  box-shadow: 0 12px 30px rgba(124, 92, 255, 0.08);
+}
+
+.premium-glow-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.3), rgba(0, 229, 168, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.premium-glow-card:hover::after {
+  opacity: 1;
+}
+
+/* Skeleton Loading Shimmer */
+.skeleton-loading {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+body.light-theme .skeleton-loading {
+  background: linear-gradient(90deg, rgba(15, 17, 23, 0.03) 25%, rgba(15, 17, 23, 0.08) 50%, rgba(15, 17, 23, 0.03) 75%);
+  background-size: 200% 100%;
+}
+
+/* Onboarding screen */
+#onboarding-screen {
+  z-index: 1000;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#onboarding-screen.hidden-onboarding {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Floating labels for fields */
+.form-field {
+  position: relative;
+}
+
+.form-field input, .form-field select, .form-field textarea {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+  outline: none;
+  border-color: #7C5CFF;
+  box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.2);
+}
+
+.form-field label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  padding: 0 0.25rem;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  color: rgba(245, 247, 250, 0.5);
+  font-size: 0.875rem;
+}
+
+body.light-theme .form-field label {
+  color: rgba(30, 41, 59, 0.5);
+}
+
+.form-field input:focus ~ label,
+.form-field input:not(:placeholder-shown) ~ label,
+.form-field select:focus ~ label,
+.form-field select:valid ~ label,
+.form-field textarea:focus ~ label,
+.form-field textarea:not(:placeholder-shown) ~ label {
+  top: -0.25rem;
+  transform: translateY(0) scale(0.8);
+  color: #7C5CFF;
+  background-color: #0E1015;
+}
+
+body.light-theme .form-field input:focus ~ label,
+body.light-theme .form-field input:not(:placeholder-shown) ~ label,
+body.light-theme .form-field select:focus ~ label,
+body.light-theme .form-field select:valid ~ label,
+body.light-theme .form-field textarea:focus ~ label,
+body.light-theme .form-field textarea:not(:placeholder-shown) ~ label {
+  background-color: #FFFFFF;
+}
+
+/* Validation Shake */
+.shake-element {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Toaster Notification Styles */
+#toast-container {
+  z-index: 2000;
+}
+
+.toast {
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.toast-closing {
+  transform: translateY(-20px) scale(0.9);
+  opacity: 0;
+}
+
+/* Budget Alert Pulse card */
+.budget-critical-glow {
+  animation: pulseBorder 2s infinite ease-in-out;
+}
+
+/* Interactive SVG hover nodes */
+.chart-point {
+  transition: r 0.2s ease, fill 0.2s ease;
+  cursor: pointer;
+}
+
+.chart-point:hover {
+  r: 6;
+  fill: #00E5A8;
+}
+
+/* Dropdown Menu Fade Animations */
+.dropdown-menu {
+  opacity: 0;
+  transform: scale(0.95) translateY(-5px);
+  pointer-events: none;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+
+/* Mini custom illustration paths and style indicators */
+.svg-bg-gradient {
+  fill: url(#card-glow);
+  opacity: 0.15;
+}
+
+/* Active Navigation indicators */
+.nav-active {
+  background: rgba(255, 255, 255, 0.05);
+  color: #7C5CFF;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(124, 92, 255, 0.05);
+}
+
+body.light-theme .nav-active {
+  background: rgba(124, 92, 255, 0.05);
+  color: #7C5CFF;
+  border: 1px solid rgba(124, 92, 255, 0.1);
+}
+
+/* Pulse animation for budget ring critical alerts */
+@keyframes ringPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px rgba(255, 90, 90, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(255, 90, 90, 0.8));
+  }
+}
+
+.pulse-ring-critical {
+  animation: ringPulse 2s infinite ease-in-out;
+}
+
+/* Collapsed Sidebar Rules */
+#sidebar {
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media(max-width: 1024px) {
+  #sidebar {
+    position: fixed;
+    height: 100%;
+    z-index: 100;
+  }
+  #sidebar.collapsed {
+    transform: translateX(-100%);
+  }
+}
+
+/* Stagger Animation delay helpers */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }

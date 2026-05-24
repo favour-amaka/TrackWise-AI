@@ -1,0 +1,440 @@
+@import "tailwindcss";
+
+/* 2026 SaaS Premium Theme and Custom Variables */
+@theme {
+  --color-primary: #7C5CFF;
+  --color-accent: #00E5A8;
+  --color-bg-dark: #0F1117;
+  --color-card-dark: rgba(255, 255, 255, 0.06);
+  --color-card-light: rgba(15, 17, 23, 0.04);
+  --color-danger: #FF5A5A;
+  --color-text-dark: #F5F7FA;
+  --color-text-light: #1E293B;
+  
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* Light Mode Overrides */
+body.light-theme {
+  color-scheme: light;
+  background-color: #F8FAFC;
+  color: var(--color-text-light);
+}
+
+/* Sidebar and Header light theme styles */
+body.light-theme #sidebar {
+  background-color: #FFFFFF !important;
+  border-right: 1px solid #E2E8F0 !important;
+}
+
+body.light-theme #sidebar h1, 
+body.light-theme #sidebar .user-display-name {
+  color: #0F172A !important;
+}
+
+body.light-theme #sidebar .sidebar-nav-item {
+  color: #475569 !important;
+}
+
+body.light-theme #sidebar .sidebar-nav-item:hover,
+body.light-theme #sidebar .sidebar-nav-item.nav-active {
+  color: var(--color-primary) !important;
+}
+
+body.light-theme #sidebar .nav-active {
+  background-color: rgba(124, 92, 255, 0.08) !important;
+  border-color: rgba(124, 92, 255, 0.15) !important;
+}
+
+body.light-theme #sidebar .border-t, 
+body.light-theme #sidebar .border-b,
+body.light-theme #sidebar .h-px {
+  border-color: #F1F5F9 !important;
+  background-color: #F1F5F9 !important;
+  border-bottom-color: #F1F5F9 !important;
+  border-top-color: #F1F5F9 !important;
+}
+
+body.light-theme main {
+  background-color: #F8FAFC !important;
+}
+
+body.light-theme main header {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+}
+
+body.light-theme #table-search-input {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  color: #1E293B !important;
+}
+
+body.light-theme #table-search-input::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* Landing / Auth page light theme overrides */
+body.light-theme #auth-screen {
+  background-color: #F8FAFC !important;
+  color: #334155 !important;
+}
+
+body.light-theme #auth-screen header {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+}
+
+body.light-theme #auth-screen nav a {
+  color: #475569 !important;
+}
+
+body.light-theme #auth-screen nav a:hover {
+  color: #000000 !important;
+}
+
+body.light-theme #auth-screen h1 {
+  color: #0F172A !important;
+}
+
+body.light-theme #auth-screen h2,
+body.light-theme #auth-screen h3,
+body.light-theme #auth-screen strong {
+  color: #1E293B !important;
+}
+
+body.light-theme #auth-screen p,
+body.light-theme #auth-screen span:not(.font-bold) {
+  color: #475569 !important;
+}
+
+body.light-theme #auth-screen .bg-white\/\[0\.02\] {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+body.light-theme #auth-screen .glass {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-theme #auth-screen #auth-form input,
+body.light-theme #auth-screen #auth-form select {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  color: #1E293B !important;
+}
+
+body.light-theme #auth-screen #auth-form input ~ label,
+body.light-theme #auth-screen #auth-form select ~ label {
+  color: #64748B !important;
+}
+
+/* Standard cards and elements in dashboard */
+body.light-theme .glass {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+}
+
+body.light-theme #welcome-hero-banner {
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.06), rgba(0, 229, 168, 0.04)) !important;
+  border-color: #E2E8F0 !important;
+}
+
+body.light-theme #welcome-hero-banner h1,
+body.light-theme #welcome-hero-banner h2 {
+  color: #0F172A !important;
+}
+
+body.light-theme #welcome-hero-banner p {
+  color: #475569 !important;
+}
+
+body.light-theme #welcome-hero-banner kbd {
+  background-color: #E2E8F0 !important;
+  color: #1E293B !important;
+}
+
+body.light-theme .metric-card {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+body.light-theme .metric-card div[class*="text-gray-"],
+body.light-theme .metric-card p[class*="text-gray-"] {
+  color: #475569 !important;
+}
+
+body.light-theme .metric-title {
+  color: #475569 !important;
+}
+
+body.light-theme .metric-value {
+  color: #0F172A !important;
+}
+
+/* Preference & settings panels */
+body.light-theme #settings-screen input,
+body.light-theme #settings-screen select {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  color: #1E293B !important;
+}
+
+body.light-theme #settings-screen input ~ label,
+body.light-theme #settings-screen select ~ label {
+  color: #64748B !important;
+}
+
+body.light-theme #settings-screen label[for] {
+  background-color: #FFFFFF !important;
+}
+
+/* Chat bubble styling */
+body.light-theme #chat-widget-panel {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-theme #chat-widget-panel .border-b,
+body.light-theme #chat-widget-panel .border-t {
+  border-color: #F1F5F9 !important;
+}
+
+body.light-theme #chat-widget-panel header {
+  background-color: #F8FAFC !important;
+}
+
+body.light-theme #chat-input {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  color: #1E293B !important;
+}
+
+body.light-theme .quick-action-pill {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+  color: #475569 !important;
+}
+
+body.light-theme .quick-action-pill:hover {
+  background-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+body.light-theme #chat-console-logs .message-ai {
+  background-color: #F1F5F9 !important;
+  color: #1E293B !important;
+  border-color: #E2E8F0 !important;
+}
+
+body.light-theme #chat-console-logs .message-user {
+  background-color: var(--color-primary) !important;
+  color: #FFFFFF !important;
+}
+
+/* Form Modals and settings overlays */
+body.light-theme #expense-modal .glass-modal,
+body.light-theme #onboarding-screen .glass {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12) !important;
+  color: #1E293B !important;
+}
+
+body.light-theme #expense-modal input,
+body.light-theme #expense-modal select,
+body.light-theme #expense-modal textarea,
+body.light-theme #onboarding-screen input,
+body.light-theme #onboarding-screen select {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  color: #1E293B !important;
+}
+
+body.light-theme #expense-modal label,
+body.light-theme #onboarding-screen label {
+  color: #64748B !important;
+  background-color: #FFFFFF !important;
+}
+
+body.light-theme #expense-modal h2,
+body.light-theme #expense-modal h3,
+body.light-theme #onboarding-screen h2 {
+  color: #0F172A !important;
+}
+
+body.light-theme #expense-modal p,
+body.light-theme #onboarding-screen p {
+  color: #475569 !important;
+}
+
+/* Tables, headers and rows */
+body.light-theme table tr.border-b {
+  border-color: #E2E8F0 !important;
+}
+
+body.light-theme table tr.border-b:hover {
+  background-color: rgba(124, 92, 255, 0.02) !important;
+}
+
+body.light-theme table th {
+  color: #64748B !important;
+}
+
+body.light-theme table td {
+  color: #334155 !important;
+}
+
+body.light-theme table td .text-white {
+  color: #0F172A !important;
+}
+
+/* Dropdowns */
+body.light-theme id="profile-dropdown",
+body.light-theme id="notifications-dropdown",
+body.light-theme .dropdown-menu {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-theme .dropdown-menu span,
+body.light-theme .dropdown-menu button,
+body.light-theme .dropdown-menu a {
+  color: #334155 !important;
+}
+
+body.light-theme .dropdown-menu button:hover,
+body.light-theme .dropdown-menu a:hover {
+  background-color: #F1F5F9 !important;
+  color: #0F172A !important;
+}
+
+body.light-theme .dropdown-menu .border-b,
+body.light-theme .dropdown-menu .my-1 {
+  border-color: #F1F5F9 !important;
+}
+
+/* Quick fixes for other random text colors and borders */
+body.light-theme .text-white {
+  color: #0F172A !important;
+}
+
+body.light-theme .border-white\/\[0\.08\],
+body.light-theme .border-white\/\[0\.06\],
+body.light-theme .border-white\/10 {
+  border-color: #EBF1FA !important;
+}
+
+body.light-theme select {
+  color: #1E293B !important;
+}
+
+body.light-theme #notifications-dropdown div p {
+  color: #64748B !important;
+}
+
+body.light-theme #notifications-dropdown div p strong {
+  color: #0F172A !important;
+}
+
+body.light-theme button.text-white,
+body.light-theme a.bg-primary,
+body.light-theme button[type="submit"],
+body.light-theme .btn-primary-text,
+body.light-theme #submit-expense-btn,
+body.light-theme #submit-onboarding-btn,
+body.light-theme #auth-submit-btn,
+body.light-theme #add-expense-btn,
+body.light-theme #save-prefs-btn,
+body.light-theme #chat-send-btn {
+  color: #FFFFFF !important;
+}
+
+/* Custom Utilities for Smooth Scrolling/Selection */
+::selection {
+  background-color: rgba(124, 92, 255, 0.25);
+  color: #00E5A8;
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.light-theme .glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(15, 17, 23, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.glass-modal {
+  background: rgba(13, 15, 22, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+body.light-theme .glass-modal {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(15, 17, 23, 0.12);
+}
+
+/* Premium Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 92, 255, 0.2);
+  border-radius: 99px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 92, 255, 0.4);
+}
+
+/* Custom Scrollbar for Light Theme */
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: rgba(15, 17, 23, 0.1);
+}
+
+body.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 17, 23, 0.2);
+}
+
+@import "./dashboard.css";
+@import "./chat.css";

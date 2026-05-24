@@ -1,0 +1,128 @@
+/* 2026 SaaS Chatbot Specific Styling */
+
+/* Floating chat trigger animation */
+@keyframes floatChat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Typing Indicator Animation */
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(0.6);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Message entry transition */
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.chat-bubble-user {
+  background: linear-gradient(135deg, #7C5CFF, #5c3fff);
+  color: #FFFFFF;
+  border-bottom-right-radius: 4px;
+  animation: messageSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.chat-bubble-ai {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #F5F7FA;
+  border-bottom-left-radius: 4px;
+  animation: messageSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+body.light-theme .chat-bubble-ai {
+  background: rgba(15, 17, 23, 0.04);
+  border: 1px solid rgba(15, 17, 23, 0.06);
+  color: #1E293B;
+}
+
+/* Chat Assistant Widget positioning */
+#chat-widget {
+  z-index: 500;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+#chat-widget.collapsed-chat {
+  transform: scale(0.3) translateY(100px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+#chat-trigger {
+  animation: floatChat 4s ease-in-out infinite;
+  box-shadow: 0 8px 32px rgba(124, 92, 255, 0.3);
+}
+
+#chat-trigger:hover {
+  box-shadow: 0 12px 40px rgba(124, 92, 255, 0.5);
+}
+
+/* Custom typing dot styles */
+.typing-dots span {
+  width: 6px;
+  height: 6px;
+  background-color: currentColor;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulseDot 1s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 400ms;
+}
+
+/* Scroll area for chats */
+.chat-messages-container {
+  scrollbar-width: thin;
+}
+
+/* Quick command buttons styling */
+.quick-action-pill {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quick-action-pill:hover {
+  background-color: rgba(124, 92, 255, 0.15);
+  border-color: #7C5CFF;
+  transform: translateY(-2px);
+}
+
+body.light-theme .quick-action-pill:hover {
+  background-color: rgba(124, 92, 255, 0.08);
+}
+
+/* Glowing chatbot logo sphere overlay */
+.chat-glow-orb {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(0, 229, 168, 0.4) 0%, transparent 70%);
+  filter: blur(4px);
+  pointer-events: none;
+  animation: floatChat 3s ease-in-out infinite;
+}
