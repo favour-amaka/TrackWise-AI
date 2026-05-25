@@ -310,8 +310,8 @@ body.light-theme table td .text-white {
 }
 
 /* Dropdowns */
-body.light-theme id="profile-dropdown",
-body.light-theme id="notifications-dropdown",
+body.light-theme #profile-dropdown,
+body.light-theme #notifications-dropdown,
 body.light-theme .dropdown-menu {
   background-color: #FFFFFF !important;
   border-color: #E2E8F0 !important;
